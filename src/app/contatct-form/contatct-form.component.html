@@ -1,0 +1,70 @@
+<div class="contianer">
+    <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+        <fieldset>
+            <legend>User deatils:</legend>
+            <div ngModelGroup="userDetails">
+                <div class="form-group">
+                    <label for="firstName">First Name</label>
+                    <input 
+                        ngModel
+                        name="firstName"
+                        #firstName="ngModel"
+                        id="firstName"
+                        type="text" 
+                        class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="lastName">Last Name</label>
+                    <input 
+                        ngModel
+                        name="lastName"
+                        #lastName="ngModel"
+                        id="lastName"
+                        type="text" 
+                        class="form-control">
+                </div>
+            </div>
+        </fieldset>
+        <div class="form-group">
+            <label for="userName">UserName</label>
+            <input 
+                required 
+                minlength="3" 
+                maxlength="10" 
+                [pattern]="userNamePattern"            
+                ngModel 
+                name="userName" 
+                #userName="ngModel"
+                id="userName" 
+                type="text" 
+               class="form-control">
+            <div 
+                class="alet alert-danger" 
+                *ngIf="userName.touched && !userName.valid">
+                <div *ngIf="userName.errors.required">
+                    Username is required
+                </div>
+                <div *ngIf="userName.errors.minlength">
+                    Username has minimun 3 characters
+                </div>
+                <div *ngIf="userName.errors.maxlength">
+                    Username has maximum 10 characters
+                </div>
+                <div *ngIf="userName.errors.pattern">
+                    Special charaters not allowed in Username
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="comment">Comment</label>
+            <textarea 
+                ngModel 
+               name="comment" 
+               id="comment" 
+              cols="30" rows="10" 
+              class="form-control">
+            </textarea>
+        </div>
+        <button class="btn btn-primary">Submit</button>
+    </form>
+</div>
