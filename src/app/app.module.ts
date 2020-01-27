@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,6 +14,56 @@ import { SummaryPipe } from './summary.pipe';
 import { ContatctFormComponent } from './contatct-form/contatct-form.component';
 import { SignupFormComponent } from './signup-form/signup-form.component';
 import { AddCardDetailsComponent } from './add-card-details/add-card-details.component';
+import { PostsComponent } from './posts/posts.component';
+import { PostService } from './services/post.service';
+import { RouterModule, Routes } from '@angular/router';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { PostDetailsComponent } from './post-details/post-details.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { HomeComponent } from './home/home.component';
+import { UsersComponent } from './users/users.component';
+
+const appRoutes : Routes =[
+  {
+    path: '',
+    component: HomeComponent,
+  },
+  {
+    // path: 'posts/:id',
+    path: 'posts/:id/:userId',
+    component: PostDetailsComponent,
+  },
+  {
+    path: 'posts',
+    component: PostsComponent,
+    data: { title: 'Post List' }
+  },
+  { 
+    path: 'courses',
+     component: CoursesComponent
+   },
+   { 
+    path: 'contact-us',
+     component: ContatctFormComponent
+   },
+   { 
+    path: 'bs-panel',
+     component: BootstrapPanelComponent
+   },
+   { 
+    path: 'favourite',
+     component: FavouriteComponent
+   },
+   { 
+    path: 'sign-up',
+     component: SignupFormComponent
+   },
+  // { path: '',
+  //   redirectTo: '/HomeComponent',
+  // },
+  { path: '**', component: NotFoundComponent }
+];
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,15 +74,43 @@ import { AddCardDetailsComponent } from './add-card-details/add-card-details.com
     SummaryPipe,
     ContatctFormComponent,
     SignupFormComponent,
-    AddCardDetailsComponent  ],
+    AddCardDetailsComponent,
+    PostsComponent,
+    PostDetailsComponent,
+    NotFoundComponent,
+    NavbarComponent,
+    HomeComponent,
+    UsersComponent
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FontAwesomeModule,
     FormsModule,
-    ReactiveFormsModule
-  ],
-  providers: [],
+    ReactiveFormsModule,
+    HttpClientModule,
+    RouterModule.forRoot(appRoutes)
+  //   RouterModule.forRoot([
+  //     {
+  //       path: '',
+  //       component: HomeComponent,
+  //     },
+  //     {
+  //       path: 'posts',
+  //       component: PostsComponent,
+  //       data: { title: 'Post List' }
+  //     },
+  //     { 
+  //       path: 'posts/:id',
+  //        component: PostDetailsComponent
+  //      },
+  //     // { path: '',
+  //     //   redirectTo: '/HomeComponent',
+  //     // },
+  //     { path: '**', component: NotFoundComponent }
+  //   ])
+   ],
+  providers: [PostService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

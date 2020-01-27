@@ -23,11 +23,17 @@
 </div> -->
 
 <!----------------------------- Switch Case : *ngSwitchCase --------------------------------->
-<!-- <div class="container">
+<div class="container">
      <ul class="nav nav-tabs">
-        <li class="nav-item"><a (click)="viewMode='list'" class="nav-link" [class.active]="viewMode=='list'">List
-                View</a></li>
-        <li class="nav-item"><a (click)="viewMode='map'" class="nav-link" [class.active]="viewMode=='map'">Map View</a>
+        <li class="nav-item">
+            <a (click)="viewMode='list'" class="nav-link" [class.active]="viewMode=='list'">List
+                View
+            </a>
+        </li>
+        <li class="nav-item">
+            <a (click)="viewMode='map'" class="nav-link" [class.active]="viewMode=='map'">
+                Map View
+            </a>
         </li>
     </ul>
     <div [ngSwitch]="viewMode">
@@ -41,4 +47,14 @@
             Otherwise
         </div>
     </div>
-</div> -->
+</div>
+
+<!----------------------------- *ngFor --------------------------------->
+<div class="container">
+    <ul class="list-group">
+        <li class="list-group-item" *ngFor="let course of courses index as i">
+            <b>{{i+1}}.</b>
+            {{course}}
+        </li>
+    </ul>
+</div>

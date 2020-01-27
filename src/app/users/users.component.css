@@ -1,0 +1,7 @@
+/* .table-bordered{
+    border: 1px solid black;
+} */
+.rowEven{
+    /* color:darkred; */
+    background-color: #dee2e6;
+}

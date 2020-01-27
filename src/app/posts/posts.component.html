@@ -1,0 +1,52 @@
+<!-- 
+<nav class="navbar navbar-expand-lg navbar-light bg-light" [ngStyle]="{'margin-bottom':'5px'}">
+    <a class="navbar-brand" href="#">Posts</a>
+ </nav> -->
+ <div class="container">
+ <form #form="ngForm" (ngSubmit)="isUpdate?updatePost():createPost()">
+     <fieldset>
+     <legend>Add new post:</legend>
+     <div class="form-group">
+         <label for="title">Title</label>
+         <input 
+         [(ngModel)]="post.title"
+         id="title"
+         name="title"
+         type="text" 
+         class="form-control">
+     </div>
+     <div class="form-group">
+        <label for="body">Body</label>
+        <textarea
+        [(ngModel)]="post.body"
+        id="body"
+        name="body"
+        type="text" 
+        class="form-control"
+        rows="5"
+        cols="10"
+        >
+        </textarea>
+        <button class="btn btn-primary" [ngStyle]="{'margin-top':'10px'}">{{isUpdate?'Save Changes':'Add Post'}}</button>
+    </div>
+</fieldset>
+ </form>
+ </div>
+<div class="container">
+      <div class="card" [ngStyle]="{'margin-bottom':'5px'}" *ngFor="let post of posts">
+        <div class="card-header">
+          <!-- {{post.id}} -->
+          <h5 class="card-title"><a
+             [routerLink]="['/posts',post.id,post.userId]"
+             [queryParams]="{pageNo:1,ordering:'updated'}"
+            >{{post.title | uppercase}}</a
+            ></h5>
+        </div>
+        <div class="card-body">
+          <!-- <h5 class="card-title">{{post.title | uppercase}}</h5> -->
+          <p class="card-text">{{post.body}}</p>
+          <button class="btn btn-primary" (click)="setPostData(post)" [ngStyle]="{'margin-right':'6px'}">Update</button>
+          <button class="btn btn-danger" (click)="deletePost(post)">Delete</button>
+        </div>
+      </div>
+</div>

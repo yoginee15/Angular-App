@@ -7,5 +7,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'my-app 1';
-  post = {'title':"My post title",'isFavourite':false};
+  post = {'title':"My post title",'isFavourite':true};
 }

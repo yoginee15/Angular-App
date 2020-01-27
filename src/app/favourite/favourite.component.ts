@@ -10,7 +10,7 @@ import { faStar as farStar } from '@fortawesome/free-regular-svg-icons';
 export class FavouriteComponent implements OnInit {
   faStar = faStar;
   farStar = farStar;
-  @Input() isFavourite:boolean;
+  @Input('isLike') isFavourite:boolean;
   constructor() { }
 
   ngOnInit() {
