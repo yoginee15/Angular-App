@@ -1,0 +1,21 @@
+.jumbotron .header{
+    width: 100%;
+    display: inline-block;
+    position: relative;
+}
+.jumbotron .header > .title{
+    margin-block-start: 0 !important;
+    margin-block-end: 0 !important;
+}
+.jumbotron .header > app-favourite{
+    position: absolute;
+    top: -42px;
+    font-size: 2em;
+    right: 24px;
+}
+.date-display span{
+    display: inline-block;
+}
+.date-display span:nth-child(2){
+    float: right;
+}

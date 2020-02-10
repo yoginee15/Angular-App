@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { faStar } from '@fortawesome/free-solid-svg-icons';
-import { faStar as farStar } from '@fortawesome/free-regular-svg-icons';
+import { faHeart } from '@fortawesome/free-solid-svg-icons';
+import { faHeart as farHeart } from '@fortawesome/free-regular-svg-icons';
 
 @Component({
   selector: 'app-favourite',
@@ -8,8 +8,8 @@ import { faStar as farStar } from '@fortawesome/free-regular-svg-icons';
   styleUrls: ['./favourite.component.css']
 })
 export class FavouriteComponent implements OnInit {
-  faStar = faStar;
-  farStar = farStar;
+  faStar = faHeart;
+  farStar = farHeart;
   @Input('isLike') isFavourite:boolean;
   constructor() { }
 

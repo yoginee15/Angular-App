@@ -1,0 +1,32 @@
+<!-- <div class="container">
+    <div class="card text-center">
+        <div class="card-header">
+            <h5>{{courseDetails?.title | uppercase}}</h5>
+            <app-favourite [isLike]="courseDetails?.is_wishlisted"></app-favourite>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">{{courseDetails?.headline}}</h5>
+          <p class="card-text">{{courseDetails?.objectives_summary}}</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+        <div class="card-footer text-muted">
+            {{courseDetails?.published_time | date}}
+          </div>
+      </div>
+  </div> -->
+<div class="container">
+    <div class="jumbotron">
+        <div class="header">
+            <h3 class="title">{{courseDetails?.title | uppercase}}</h3>
+            <app-favourite [isLike]="courseDetails?.is_wishlisted"></app-favourite>
+        </div>
+        <p class="lead">{{courseDetails?.headline}}</p>
+        <hr class="my-4">
+        <p>Summary : {{courseDetails?.objectives_summary}}</p>
+        <hr class="my-4">
+        <div class="date-display">
+            <span>Created At: {{courseDetails?.created | date}}</span>
+            <span>Updated At: {{courseDetails?.last_update_date | date}}</span>
+        </div>
+    </div>
+</div>

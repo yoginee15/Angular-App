@@ -1,17 +1,24 @@
 <div class="contianer">
     <form #f="ngForm" (ngSubmit)="onSubmit(f)">
-        <fieldset>
+        <fieldset [class]="user.touched && user.invalid ? 'border-red' : ''">
             <legend>User deatils:</legend>
-            <div ngModelGroup="userDetails">
+            <div ngModelGroup="userDetails" #user="ngModelGroup">
                 <div class="form-group">
                     <label for="firstName">First Name</label>
                     <input 
+                       required 
+                        minlength="3" 
                         ngModel
                         name="firstName"
                         #firstName="ngModel"
                         id="firstName"
                         type="text" 
-                        class="form-control">
+                        class="form-control"
+                        (change) = "log(firstName)"
+                        >
+                        <div class="alert alert-danger" *ngIf="firstName.touched && firstName.invalid">
+                            <div>First name is required</div>
+                        </div>
                 </div>
                 <div class="form-group">
                     <label for="lastName">Last Name</label>
@@ -24,6 +31,9 @@
                         class="form-control">
                 </div>
             </div>
+            <!-- <div class="alert alert-danger" *ngIf="user.touched && user.invalid">
+                User details is not valid
+            </div> -->
         </fieldset>
         <div class="form-group">
             <label for="userName">UserName</label>
@@ -35,6 +45,7 @@
                 ngModel 
                 name="userName" 
                 #userName="ngModel"
+                (change) = "log(userName)"
                 id="userName" 
                 type="text" 
                class="form-control">
@@ -65,6 +76,30 @@
               class="form-control">
             </textarea>
         </div>
-        <button class="btn btn-primary">Submit</button>
+        <div class="form-group">
+            <label for="contactMethods">Contact Methods</label>
+            <select 
+            ngModel
+            #contactMethod="ngModel" 
+            name="contactMethods" 
+            id="contactMethods"
+            class="form-control"
+            >
+                <option *ngFor="let method of contactMethods" [value]="method.id">{{method.name}}</option>
+            </select>
+        </div>
+        <div class="form-group" *ngFor="let method of contactMethods">
+            <label for="{{method.name}}">
+                <input type="checkbox" 
+                ngModel
+                [name]="method.name"
+                [id]="method.name"
+                >
+                {{method.name}}
+            </label>
+
+        </div>
+        <button type="submit" class="btn btn-primary" [disabled]="f.invalid">Submit</button>
+        {{f.value | json}}
     </form>
 </div>

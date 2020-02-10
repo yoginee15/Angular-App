@@ -1,0 +1,42 @@
+.map-view,.list-view{
+    width: 100%;
+    margin-top: 20px;
+}
+.map-view{   
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+.map-view > .card{
+    width: 23%;
+    height: 200px;
+    margin-right: 2%;
+    margin-bottom: 10px;
+}
+
+.map-view > .card:nth-child(4){
+    margin-right: 0;
+}
+
+.map-view > .card > .card-body{
+    height: 120px;
+    position: relative;
+}
+.map-view > .card > .card-body > app-favourite{
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
+.map-view > .card > .card-body > .card-title{
+    width: 90%;
+}
+.map-view > .card > .card-body > .card-title h5{
+    display: inline-block;
+    margin-block-start: 0 !important;
+    margin-block-end: 0 !important;
+} 
+
+.list-view > .list-group > .list-group-item, .map-view > .card > .card-body > .card-title {
+    cursor: pointer;
+}

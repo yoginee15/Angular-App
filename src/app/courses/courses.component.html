@@ -1,4 +1,4 @@
-<h2>{{title}}</h2>
+<!-- <h2>{{title}}</h2> -->
 
 <!------------------------------------------------ *ngIf --------------------------------------------------------->
 <!-- <div *ngIf="courses.length>0;then coursesList else noCourses"></div>
@@ -38,10 +38,39 @@
     </ul>
     <div [ngSwitch]="viewMode">
         <div *ngSwitchCase="'list'">
-            List View
+            <!-- List View -->
+            <div class="list-view">
+                <!-- <ul class="list-group">
+                    <li class="list-group-item" *ngFor="let course of courses index as i">
+                        <b>{{i+1}}.</b>
+                        {{course}}
+                    </li>
+                </ul> -->
+                <div class="list-group" *ngFor="let course of courses index as i">
+                    <div class="list-group-item list-group-item-action">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1" [routerLink]="['/courses',course.id]">{{course.title}}</h5>
+                            <!-- <p class="mb-1">{{course.summary}}</p> -->
+                            <app-favourite [isLike]="courseDetails?.is_wishlisted"></app-favourite>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
         <div *ngSwitchCase="'map'">
-            Map View
+            <!-- Map View -->
+            <div class="map-view">
+                <div class="card" *ngFor="let course of courses index as i">
+                    <div class="card-body">
+                        <h5 class="card-title" [routerLink]="['/courses',course.id]">{{course.title}}</h5>
+                        <app-favourite [isLike]="courseDetails?.is_wishlisted"></app-favourite>
+                    </div>
+                    <div class="card-footer text-muted">
+                        Created date: <a class="card-link">{{course.created | date}}</a>
+                        <!-- <a class="card-link">{{course.last_update_date | date}}</a> -->
+                    </div>
+                  </div>
+            </div>
         </div>
         <div *ngDefaultCase>
             Otherwise
@@ -50,11 +79,11 @@
 </div>
 
 <!----------------------------- *ngFor --------------------------------->
-<div class="container">
+<!-- <div class="container">
     <ul class="list-group">
         <li class="list-group-item" *ngFor="let course of courses index as i">
             <b>{{i+1}}.</b>
             {{course}}
         </li>
     </ul>
-</div>
+</div> -->

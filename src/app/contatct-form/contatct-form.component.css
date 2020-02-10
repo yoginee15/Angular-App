@@ -1,6 +1,3 @@
-.contianer{
-    margin: 25px;
-}
 .alet{
     margin-top: 2px;
     padding: 4px;
@@ -27,4 +24,8 @@ legend
     border-radius: 4px; 
     padding: 5px 5px 5px 10px; 
     background-color: #ffffff;
+}
+.border-red{
+    border: 1px solid red !important;
+
 }

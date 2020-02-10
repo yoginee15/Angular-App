@@ -7,13 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContatctFormComponent implements OnInit {
   userNamePattern = /^[A-Za-z0-9 ]+$/;
+  contactMethods = [{id:1,name:"Email"},{id:2,name:"Phone"}];
 
   constructor() { }
 
   ngOnInit() {
   }
 
-  onSubmit(f) { console.log("Form submitted successfully!!!",f.value) }  
+  onSubmit(f) { 
+    console.log("Form submitted successfully!!!",f)
+ }  
   log(name){ console.log(name)};
 
 }

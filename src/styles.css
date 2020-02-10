@@ -3,3 +3,6 @@
 .form-control.ng-touched.ng-invalid{
     border: 2px solid red;
 }
+.contianer{
+    margin: 25px;
+}

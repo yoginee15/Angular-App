@@ -8,9 +8,11 @@ export class UsernameValidators{
         return null; 
     }
     static shouldBeUnique(control:AbstractControl):Promise<ValidationErrors|null>{
+        const userNames = ['admin','user','user1','user2','user3'];
         return new Promise((resolve,reject)=>{
             setTimeout(()=>{
-                if((control.value as String).toLowerCase() === "admin"){
+                // console.log("username",userNames)
+                if(userNames.indexOf(control.value)>-1){
                     resolve({shouldBeUnique:true})
                 }else{
                     resolve(null);
