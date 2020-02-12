@@ -65,18 +65,16 @@ export class AddCardDetailsComponent implements OnInit {
   }
 
   updateCard(){
-    // console.dir(this.cards.controls);
-    // console.log("current card",this.updatingObj);
-    let index = this.cards.controls.find((card:FormGroup) =>
+    let obj = this.cards.controls.find((card:FormGroup) =>{
       card.value.name == this.updatingObj.value.name && 
       card.value.number == this.updatingObj.value.name
+      return card;
+    }
     );
-    // console.log("index",index);
-    let name = (this.card.controls.name as FormControl).value;
-    let number = (this.card.controls.number as FormControl).value;
-    index.setValue({
-      name:name,
-      number:number
+    let index = this.cards.controls.indexOf(obj);
+    this.cards.controls[index].setValue({
+      name:(this.card.controls.name as FormControl).value,
+      number:(this.card.controls.number as FormControl).value
     });
     this.isEdit = false;
     this.form.get('card').reset();

@@ -51,7 +51,7 @@
                         <div class="d-flex w-100 justify-content-between">
                             <h5 class="mb-1" [routerLink]="['/courses',course.id]">{{course.title}}</h5>
                             <!-- <p class="mb-1">{{course.summary}}</p> -->
-                            <app-favourite [isLike]="courseDetails?.is_wishlisted"></app-favourite>
+                            <app-favourite [isLike]="course.is_wishlisted"></app-favourite>
                         </div>
                     </div>
                 </div>
@@ -63,7 +63,7 @@
                 <div class="card" *ngFor="let course of courses index as i">
                     <div class="card-body">
                         <h5 class="card-title" [routerLink]="['/courses',course.id]">{{course.title}}</h5>
-                        <app-favourite [isLike]="courseDetails?.is_wishlisted"></app-favourite>
+                        <app-favourite [isLike]="course.is_wishlisted"></app-favourite>
                     </div>
                     <div class="card-footer text-muted">
                         Created date: <a class="card-link">{{course.created | date}}</a>

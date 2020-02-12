@@ -47,9 +47,14 @@ const routes: Routes = [
     path: 'bs-panel',
      component: BootstrapPanelComponent
    },
+  //  { 
+  //   path: 'favourite',
+  //    component: FavouriteComponent
+  //  },
+
    { 
-    path: 'favourite',
-     component: FavouriteComponent
+    path: 'add-card',
+     component: AddCardDetailsComponent
    },
    { 
     path: 'sign-up',

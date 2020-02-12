@@ -165,7 +165,7 @@ export class CoursesService {
       "headline": "Become a full-stack web developer with just one course. HTML, CSS, Javascript, Node, React, MongoDB and more!",
       "rating": 4.69457,
       "num_reviews": 37617,
-      "is_wishlisted": false,
+      "is_wishlisted": true,
       "created": "2018-02-22T12:02:33Z",
       "published_time": "2018-10-25T21:34:15Z",
       "objectives_summary": [
@@ -203,7 +203,7 @@ export class CoursesService {
       "headline": "Master JavaScript with the most complete course! Projects, challenges, quizzes, JavaScript ES6+, OOP, AJAX, Webpack",
       "rating": 4.55917,
       "num_reviews": 62717,
-      "is_wishlisted": false,
+      "is_wishlisted": true,
       "created": "2016-05-17T09:31:26Z",
       "published_time": "2016-10-14T22:52:23Z",
       "objectives_summary": [
@@ -222,7 +222,7 @@ export class CoursesService {
       "headline": "Master Angular (formerly \"Angular 2\") and build awesome, reactive web apps with the successor of Angular.js",
       "rating": 4.56199,
       "num_reviews": 106200,
-      "is_wishlisted": false,
+      "is_wishlisted": true,
       "created": "2016-02-08T17:02:55Z",
       "published_time": "2016-02-11T07:29:29Z",
       "objectives_summary": [
@@ -426,7 +426,7 @@ export class CoursesService {
       "headline": "Build modern responsive websites & UIs with HTML5, CSS3 & Sass! Learn Flex & CSS Grid",
       "rating": 4.73506,
       "num_reviews": 6946,
-      "is_wishlisted": false,
+      "is_wishlisted": true,
       "created": "2019-01-15T22:45:09Z",
       "published_time": "2019-01-17T23:22:55Z",
       "objectives_summary": [
